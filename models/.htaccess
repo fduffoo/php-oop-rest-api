@@ -1,5 +1,0 @@
-SetEnv USERNAME ""
-SetEnv PASSWORD ""
-SetEnv DBNAME ""
-SetEnv HOST ""
-SetEnv PORT ""
