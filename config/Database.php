@@ -9,7 +9,6 @@ class Database {
  private $dbname = 'quotesdb_zu7u';
  private $username = 'fduffoo';
  private $password = 'NP8hVT92m4BGGF1CZPTaRHHOFV3BT5DR';
- private $port = '5432';
  private $conn;
 
    // Local Conn
@@ -25,7 +24,7 @@ class Database {
 
         try {
             $this->conn = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname,
-            $this->username, $this->password, $this->port);
+            $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) {
             echo 'Connection Error: ' . $e->getMessage();
