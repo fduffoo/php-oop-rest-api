@@ -2,21 +2,15 @@
 
 class Database {
 
-    $this->username = getenv('USERNAME');
-    $this->password = getenv('PASSWORD');
-    $this->dbname = getenv('DBNAME');
-    $this->host = getenv('HOST');
-    $this->port = getenv('PORT');
+   // DB Params
 
-    // DB Params
-
-    // Server Conn
- //private $hostname = 'dpg-cgb4uihmbg55nql1c3p0-a';
- //private $dbname = 'quotesdb_zu7u';
- //private $username = 'fduffoo';
- //private $password = 'NP8hVT92m4BGGF1CZPTaRHHOFV3BT5DR';
- //private $port
- //private $conn;
+   // Server Conn
+   private $hostname;
+   private $dbname;
+   private $username;
+   private $password;
+   private $port;
+   private $conn;
 
    // Local Conn
    //private $host = 'localhost';
@@ -24,6 +18,14 @@ class Database {
    //private $username = 'root';
    //private $password = '';
    //private $conn;
+
+    public function __construct () {
+    $this->username = getenv('USERNAME');
+    $this->password = getenv('PASSWORD');
+    $this->dbname = getenv('DBNAME');
+    $this->host = getenv('HOST');
+    $this->port = getenv('PORT');
+    }
 
     // DB Connect
     public function connect() {
