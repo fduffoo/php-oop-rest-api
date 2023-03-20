@@ -22,18 +22,17 @@ $num = $result->rowCount();
 if($num > 0) {
     // Author array
     $authors_arr = array();
-    $authors_arr['data'] = array();
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
         $authors_item = array(
             'id' => $id,
-            'author' => $author,
+            'author' => $author
         );
 
         // Push to "data"
-        array_push($authors_arr['data'], $authors_item);
+        array_push($authors_arr, $authors_item);
     }
 
     // Turn to JSON & output

@@ -8,8 +8,8 @@ class Quote {
     // Properties
     public $id;
     public $quote;
-    public $author_id;
-    public $category_id;
+    public $author;
+    public $category;
 
     //constructor with DB
     public function __construct($db) {
@@ -22,14 +22,13 @@ class Quote {
     public function read() {
     // Create query
     $query = 'SELECT 
-        a.id as author_id,
-        c.id as category_id, 
-        q.id, 
+        a.author as author,
+        c.category as category, 
+        q.id,
         q.quote
     FROM ' . $this->table . ' q 
-        LEFT JOIN authors as a ON author_id = a.id
-        LEFT JOIN categories as c ON category_id = c.id'; 
-        
+        LEFT JOIN authors as a ON q.author_id = q.id 
+        LEFT JOIN categories as c ON q.category_id = q.id';
 
     // Prepare statement
     $stmt = $this->conn->prepare($query);
