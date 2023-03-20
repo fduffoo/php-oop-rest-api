@@ -2,20 +2,21 @@
 
 class Database {
 
-    // Server Connection
     // DB Params
-    //private $host = 'dpg-cgb4uihmbg55nql1c3p0-a';
-    //private $db_name = 'quotesdb_zu7u';
-    //private $username = 'fduffoo';
-    //private $password = 'NP8hVT92m4BGGF1CZPTaRHHOFV3BT5DR';
-    //private $conn;
 
-   // Local connection variables
-   private $host = 'localhost';
-   private $db_name = 'quotesdb';
-   private $username = 'root';
-   private $password = '';
-   private $conn;
+    // Server conn
+    private $host = 'dpg-cgb4uihmbg55nql1c3p0-a';
+    private $db_name = 'quotesdb_zu7u';
+    private $username = 'fduffoo';
+    private $password = 'NP8hVT92m4BGGF1CZPTaRHHOFV3BT5DR';
+    private $conn;
+
+   // Local conn
+   //private $host = 'localhost';
+   //private $db_name = 'quotesdb';
+   //private $username = 'root';
+   //private $password = '';
+   //private $conn;
 
     // DB Connect
     public function connect() {
