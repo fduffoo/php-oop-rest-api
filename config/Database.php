@@ -9,7 +9,7 @@ class Database {
  private $dbname = 'quotesdb_zu7u';
  private $username = 'fduffoo';
  private $password = 'NP8hVT92m4BGGF1CZPTaRHHOFV3BT5DR';
- private $port "5432";
+ private $port = "5432";
  private $conn;
 
    // Local Conn
