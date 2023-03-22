@@ -54,6 +54,12 @@ class Category {
     $stmt-> execute();
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$row) {
+        echo json_encode(
+            array('message' => "category_id Not Found"));
+            exit();
+    }
     
     // Set properties
     $this->id = $row ['id'];

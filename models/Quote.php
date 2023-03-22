@@ -68,6 +68,12 @@ class Quote {
     $stmt-> execute();
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$row) {
+        echo json_encode(
+            array('message' => "No Quotes Found"));
+            exit();
+    }
     
     // Set properties
     $this->id = $row ['id'];
