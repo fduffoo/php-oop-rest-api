@@ -52,8 +52,8 @@ class Quote {
         c.category as category
     FROM
         ' . $this->table . ' q
-    LEFT JOIN authors as a ON q.author_id = q.id
-    LEFT JOIN categories as c ON q.category_id = q.id
+    LEFT JOIN authors as a ON q.author_id = a.id
+    LEFT JOIN categories as c ON q.category_id = c.id
     WHERE
         q.id = ?
     LIMIT 1';
