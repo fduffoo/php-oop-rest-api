@@ -68,10 +68,10 @@ class Quote {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     
     // Set properties
-    //$this->id = $row ['id'];
-    //$this->quote = $row ['quote'];
-    //$this->author_id = $row ['author_id'];     
-    //$this->category_id = $row ['category_id']; 
+    $this->id = $row ['id'];
+    $this->quote = $row ['quote'];
+    $this->author = $row ['author_id'];     
+    $this->category = $row ['category_id']; 
 
     }
 
