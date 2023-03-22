@@ -42,7 +42,7 @@ class Category {
         ' . $this->table . ' c
     WHERE
         c.id = ?
-    LIMIT 0,1';
+    LIMIT 1';
 
     // Prepare statement
     $stmt = $this->conn->prepare($query);
