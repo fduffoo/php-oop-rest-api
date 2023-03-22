@@ -43,18 +43,28 @@ class Quote {
     // Read Single -------------------------------------------------------------------------------------------
 
     public function read_single() {
+       
         // Create query
-   
-   $query = 'SELECT 
+
+        $query = 'SELECT 
+        a.author as author,
+        c.category as category, 
         q.id,
-        q.quote,
-        q.author_id,
-        q.category_id
-    FROM
-        ' . $this->table . ' q
-    WHERE
-        q.id = ?
-    LIMIT 1';
+        q.quote
+    FROM ' . $this->table . ' q 
+        LEFT JOIN authors as a ON q.author_id = q.id 
+        LEFT JOIN categories as c ON q.category_id = q.id';
+
+   //$query = 'SELECT 
+   //     q.id,
+   //     q.quote,
+   //     q.author_id,
+   //     q.category_id
+   // FROM
+   //     ' . $this->table . ' q
+   // WHERE
+   //     q.id = ?
+   // LIMIT 1';
 
     // Prepare statement
     $stmt = $this->conn->prepare($query);
@@ -70,8 +80,8 @@ class Quote {
     // Set properties
     $this->id = $row ['id'];
     $this->quote = $row ['quote'];
-    $this->author = $row ['author_id'];     //both_id
-    $this->category = $row ['category_id']; //
+    $this->author = $row ['author_id'];     
+    $this->category = $row ['category_id']; 
 
     }
 
