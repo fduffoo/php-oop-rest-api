@@ -26,15 +26,5 @@ $author_arr = array(
     'author' => $author->author,
 );
 
-if($author->read_single()) {
-    echo json_encode(
-        array('message' => 'Here you go :)')
-    );
-} else {
-    echo json_encode(
-        array('message' => 'Author_id Not Found')
-    );
-}
-
 // Make JSON
 print_r(json_encode($author_arr));
