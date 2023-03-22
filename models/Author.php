@@ -57,6 +57,7 @@ class Author {
     if (!$row) {
         echo json_encode(
             array('message' => "author_id Not Found"));
+            exit();
     }
     
     // Set properties
