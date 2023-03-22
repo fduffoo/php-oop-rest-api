@@ -48,8 +48,8 @@ class Quote {
     $query = 'SELECT 
         q.id,
         q.quote,
-        a.author_id as author,
-        c.category_id as category
+        a.author as author,
+        c.category as category
     FROM
         ' . $this->table . ' q
     LEFT JOIN authors as a ON q.author_id = q.id
