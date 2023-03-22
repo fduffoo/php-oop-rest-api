@@ -25,10 +25,10 @@ $category->id = $data->id;
 // Delete category
 if($category->delete()) {
     echo json_encode(
-        'id' => $category->id  
+        array('id' => $category->id)  
     );
 } else {
-    echo json_encode(   
-        'message' => 'Category Not Deleted'
+    echo json_encode(
+        array('message' => 'Category Not Deleted')
     );
 }
