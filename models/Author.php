@@ -55,7 +55,8 @@ class Author {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$row) {
-        echo json_encode['message' => "author_id Not Found"];
+        echo json_encode(
+            array('message' => "author_id Not Found"));
     }
     
     // Set properties
