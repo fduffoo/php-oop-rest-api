@@ -69,8 +69,8 @@ class Quote {
     // Set properties
     $this->id = $row ['id'];
     $this->quote = $row ['quote'];
-    $this->author_id = $row ['author'];     //    $this->author_id = $row ['author_id'];
-    $this->category_id = $row ['category']; //    $this->category_id = $row ['category_id']; 
+    $this->author_id = $row ['author_id'];    
+    $this->category_id = $row ['category_id']; 
     }
 
 
