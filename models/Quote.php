@@ -45,28 +45,16 @@ class Quote {
     public function read_single() {
         // Create query
    
-        $query = 'SELECT 
-        a.author as author,
-        c.category as category, 
+   $query = 'SELECT 
         q.id,
-        q.quote
-    FROM ' . $this->table . ' q 
-        LEFT JOIN authors as a ON q.author_id = q.id 
-        LEFT JOIN categories as c ON q.category_id = q.id
-        WHERE q.id = ?
-        LIMIT 1';
-   
-   
-   //$query = 'SELECT 
-   //     q.id,
-   //     q.quote,
-   //     q.author_id,
-   //     q.category_id
-   // FROM
-   //     ' . $this->table . ' q
-   // WHERE
-   //     q.id = ?
-   // LIMIT 1';
+        q.quote,
+        q.author_id,
+        q.category_id
+    FROM
+        ' . $this->table . ' q
+    WHERE
+        q.id = ?
+    LIMIT 1';
 
     // Prepare statement
     $stmt = $this->conn->prepare($query);
@@ -80,10 +68,10 @@ class Quote {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     
     // Set properties
-   // $this->id = $row ['id'];
-   // $this->quote = $row ['quote'];
-  //  $this->author_id = $row ['author_id'];     
-  //  $this->category_id = $row ['category_id']; 
+    $this->id = $row ['id'];
+    $this->quote = $row ['quote'];
+    $this->author_id = $row ['author_id'];     
+    $this->category_id = $row ['category_id']; 
 
     }
 
