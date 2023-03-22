@@ -54,6 +54,10 @@ class Author {
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     
+    if (!$row) {
+        echo "author_id Not Found";
+    }
+    
     // Set properties
     $this->id = $row ['id'];
     $this->author = $row ['author'];

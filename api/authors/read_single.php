@@ -26,9 +26,5 @@ $author_arr = array(
     'author' => $author->author,
 );
 
-if(empty($author->id)){
-    echo 'author_id Not Found';
-}
-
 // Make JSON
 print_r(json_encode($author_arr));
