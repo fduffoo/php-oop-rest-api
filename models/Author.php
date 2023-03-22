@@ -41,7 +41,7 @@ class Author {
         FROM
         ' . $this->table . ' a
     WHERE a.id = ?
-    LIMIT 0,1 ';
+    LIMIT 1 ';
 
     // Prepare statement
     $stmt = $this->conn->prepare($query);
@@ -65,9 +65,8 @@ class Author {
     public function create() {
         // Create query
         $query = 'INSERT INTO ' . $this->table . ' 
-          SET
-            id = :id,
-            author = :author';
+        (id, author) VALUES
+        (:id, :author)';
 
             // Prepare statement
             $stmt = $this->conn->prepare($query);

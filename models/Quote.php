@@ -53,7 +53,7 @@ class Quote {
         ' . $this->table . ' q
     WHERE
         q.id = ?
-    LIMIT 0,1';
+    LIMIT 1';
 
     // Prepare statement
     $stmt = $this->conn->prepare($query);
