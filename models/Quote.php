@@ -48,10 +48,12 @@ class Quote {
     $query = 'SELECT 
         q.id,
         q.quote,
-        q.author_id,
-        q.category_id
+        a.author_id as author,
+        c.category_id as category
     FROM
         ' . $this->table . ' q
+    LEFT JOIN authors as a ON q.author_id = q.id
+    LEFT JOIN categories as c ON q.category_id = q.id
     WHERE
         q.id = ?
     LIMIT 1';
