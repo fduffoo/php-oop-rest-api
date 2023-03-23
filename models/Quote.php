@@ -131,6 +131,12 @@ class Quote {
         WHERE
             id = :id';
 
+            if (is_null($this->author_id) || is_null($this->category_id) || is_null($this->id) || is_null($this->quote)) {
+            echo json_encode(
+                array('message' => "Missing Required Parameters"));
+                exit();
+            }
+
             // Prepare statement
             $stmt = $this->conn->prepare($query);
 
