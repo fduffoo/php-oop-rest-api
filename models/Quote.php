@@ -8,8 +8,8 @@ class Quote {
     // Properties
     public $id;
     public $quote;
-    public $author;
-    public $category;
+    public $author_id;
+    public $category_id;
 
     //constructor with DB
     public function __construct($db) {
