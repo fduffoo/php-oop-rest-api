@@ -11,6 +11,9 @@ class Quote {
     public $author_id;
     public $category_id;
 
+    public $author;
+    public $category;
+
     //constructor with DB
     public function __construct($db) {
         $this->conn = $db;
