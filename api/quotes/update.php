@@ -20,11 +20,11 @@ $quote = new Quote($db);
 $data = json_decode(file_get_contents("php://input"));
 
 if (isset($data->author_id) || isset($data->category_id) || isset($data->id) || isset($data->quote)) {
-    
-    printr(isset($data->author_id))
-    printr(isset($data->category_id))
-    printr(isset($data->id))
-    printr(isset($data->quote))
+
+    print_r(isset($data->author_id))
+    print_r(isset($data->category_id))
+    print_r(isset($data->id))
+    print_r(isset($data->quote))
 
     echo json_encode(
         array('message' => "Missing Required Parameters"));
