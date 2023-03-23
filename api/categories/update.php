@@ -19,6 +19,13 @@ $category = new Category($db);
 // Get raw posted data
 $data = json_decode(file_get_contents("php://input"));
 
+if (!isset($data->category) || !isset($data->id)) {
+
+    echo json_encode(
+        array('message' => "Missing Required Parameters"));
+        exit();
+    }
+
 // Set ID to update
 $category->id = $data->id;
 $category->category = $data->category;

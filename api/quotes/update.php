@@ -21,11 +21,6 @@ $data = json_decode(file_get_contents("php://input"));
 
 if (!isset($data->author_id) || !isset($data->category_id) || !isset($data->id) || !isset($data->quote)) {
 
-    print_r(!isset($data->author_id));
-    print_r(!isset($data->category_id));
-    print_r(!isset($data->id));
-    print_r(!isset($data->quote));
-
     echo json_encode(
         array('message' => "Missing Required Parameters"));
         exit();
