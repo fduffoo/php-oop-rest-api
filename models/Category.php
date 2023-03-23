@@ -72,18 +72,18 @@ class Category {
     public function create() {
         // Create query
         $query = 'INSERT INTO ' . $this->table . ' 
-        (id, category) VALUES
-        (:id, :category)';
+        (category) VALUES
+        (:category)';
 
             // Prepare statement
             $stmt = $this->conn->prepare($query);
 
             // Clean data
-            $this->id = htmlspecialchars(strip_tags($this->id));
+            //$this->id = htmlspecialchars(strip_tags($this->id));
             $this->category = htmlspecialchars(strip_tags($this->category));
 
             // Bind data
-            $stmt->bindParam(':id', $this->id);
+            //$stmt->bindParam(':id', $this->id);
             $stmt->bindParam(':category', $this->category);
 
             // Execute query
