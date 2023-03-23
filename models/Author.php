@@ -78,11 +78,9 @@ class Author {
             $stmt = $this->conn->prepare($query);
 
             // Clean data
-            //$this->id = htmlspecialchars(strip_tags($this->id));
             $this->author = htmlspecialchars(strip_tags($this->author));
 
             // Bind data
-            //$stmt->bindParam(':id', $this->id);
             $stmt->bindParam(':author', $this->author);
 
             // Execute query

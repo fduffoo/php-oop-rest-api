@@ -26,7 +26,6 @@ if (!isset($data->category)) {
         exit();
     }
 
-//$category->id = $data->id;
 $category->category = $data->category;
 
 // Create category

@@ -20,7 +20,6 @@ class Database {
             return $this->conn;
         } else {
             
-            //$dsn = "pgsql:host={$this->host};port={$this->port};dbname={$this->dbname};";
             $dsn = "pgsql:host={$this->host};dbname={$this->dbname}";
 
             try {

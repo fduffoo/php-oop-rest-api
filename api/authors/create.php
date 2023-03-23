@@ -26,7 +26,6 @@ if (!isset($data->author)) {
         exit();
     }
 
-//$author->id = $data->id;
 $author->author = $data->author;
 
 // Create author

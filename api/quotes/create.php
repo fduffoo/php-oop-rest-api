@@ -26,7 +26,6 @@ if (!isset($data->author_id) || !isset($data->category_id) || !isset($data->quot
         exit();
     }
 
-//$quote->id = $data->id;
 $quote->quote = $data->quote;
 $quote->author_id = $data->author_id;
 $quote->category_id = $data->category_id;
