@@ -129,7 +129,7 @@ class Quote {
             author_id = :author_id,
             category_id = :category_id,
         WHERE
-            id= :id';
+            id = :id';
 
             // Prepare statement
             $stmt = $this->conn->prepare($query);
