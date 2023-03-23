@@ -19,6 +19,12 @@ $quote = new Quote($db);
 // Get raw posted data
 $data = json_decode(file_get_contents("php://input"));
 
+if (is_null($data->author_id) || is_null($data->category_id) || is_null($data->id) || is_null($data->quote)) {
+    echo json_encode(
+        array('message' => "Missing Required Parameters"));
+        exit();
+    }
+
 // Set ID to update
 $quote->id = $data->id;
 $quote->quote = $data->quote;
